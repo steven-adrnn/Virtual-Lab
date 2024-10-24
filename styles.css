@@ -2,7 +2,11 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: none;
+    background-image: url('image/8552601.jpg');
+    backdrop-filter: blur(7px);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,21 +20,6 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('image/8552601.jpg');
-    backdrop-filter: blur(7px);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    z-index: -1;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     z-index: -1;
 }
@@ -1066,6 +1055,8 @@ html, body {
 @media screen and (max-width: 768px) {
     body {
         font-size: 14px;
+        background-image: url('image/8552601.jpg');
+        backdrop-filter: blur(7px);
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
