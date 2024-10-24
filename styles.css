@@ -1313,18 +1313,6 @@ a:hover {
         height: 50px;
         min-height: 50px;
     }
-
-    footer {
-        background-color: #01303f;
-        padding: 1em;
-        text-align: center;
-        color: #fff;
-        margin-top: auto;
-        clear: both;
-        width: 100%;
-        z-index: 100;
-        position:static;
-    }
 }
 
 body.menu-open {
