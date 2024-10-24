@@ -5,7 +5,6 @@ let intervalId;
 let answerSelected = false;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Tambahkan event listener untuk tombol start
     const startButton = document.getElementById('start-btn');
     const quizContent = document.getElementById('quiz-content');
     const quizStart = document.getElementById('quiz-start');
@@ -51,7 +50,7 @@ const questions = [
     },
     {
         question: 'Algoritma pengurutan mana yang menggunakan teknik "heapify"?',
-        options: ['Merge Sort', 'Quick Sort', ' Heap Sort'],
+        options: ['Merge Sort', 'Quick Sort', 'Heap Sort'],
         correctAnswer: 'Heap Sort'
     },
     {
