@@ -1070,11 +1070,6 @@ html, body {
 @media screen and (max-width: 768px) {
     body {
         font-size: 14px;
-        background-image: url('image/8552601.jpg');
-        backdrop-filter: blur(7px);
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
     }
 
     h1 {
