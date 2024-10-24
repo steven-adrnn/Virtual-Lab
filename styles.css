@@ -911,6 +911,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 
 @media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        flex-direction: column;
+
+    }
     .quiz-container {
         max-width: 800px;
         min-width: 300px;
@@ -1151,6 +1159,7 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    
     .hero {
         margin-top: 20px;
         padding: 1.5em;
