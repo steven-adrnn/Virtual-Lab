@@ -229,7 +229,7 @@ footer {
     clear: both;
     width: 100%;
     z-index: 100;
-    position:absolute;
+    position:static;
 }
 
 .feature-link {
