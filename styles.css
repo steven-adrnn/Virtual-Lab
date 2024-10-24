@@ -226,6 +226,9 @@ footer {
     text-align: center;
     color: #fff;
     margin-top: auto;
+    clear: both;
+    z-index: 1;
+    position: relative;
 }
 
 .feature-link {
@@ -239,14 +242,6 @@ footer {
 
 .feature-link:hover {
     background-color: #0069d9;
-}
-
-footer {
-    background-color: #01303f;
-    padding: 1em;
-    text-align: center;
-    color: #fff;
-    clear: both;
 }
 
 .center-canvas {
