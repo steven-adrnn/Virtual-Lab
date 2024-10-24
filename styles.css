@@ -1312,6 +1312,8 @@ a:hover {
         padding: 10px;
         height: 50px;
         min-height: 50px;
+        position:static;
+
     }
 
     footer {
