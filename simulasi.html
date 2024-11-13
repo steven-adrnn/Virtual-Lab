@@ -76,6 +76,13 @@
     <script src="source/script.js"></script>
     <script src="source/hamburger.js"></script>
     <script src="source/transition.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html'; // Arahkan ke halaman login jika belum login
+            }
+        });
+    </script>
 
 </body>
 </html>

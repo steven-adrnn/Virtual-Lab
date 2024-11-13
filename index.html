@@ -30,6 +30,15 @@
     </header>
 
     <main>
+        <!-- Tambahkan tombol logout di dalam <main> -->
+        <button id="logout-btn">Logout</button>
+
+        <script>
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                localStorage.removeItem('isLoggedIn'); // Hapus status login
+                window.location.href = 'login.html'; // Arahkan kembali ke halaman login
+            });
+        </script>
         <section class="hero">
             <h1>Virtual Lab: Sorting Algorithm</h1>
             <p>Pelajari algoritma pengurutan melalui simulasi interaktif, course, dan kuis!</p>
@@ -58,6 +67,13 @@
     <script src="source/script.js"></script>
     <script src="source/hamburger.js"></script>
     <script src="source//transition.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html'; // Arahkan ke halaman login jika belum login
+            }
+        });
+    </script>
 
 </body>
 </html>
