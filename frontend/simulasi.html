@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi - Virtual Lab: Sorting Algorithm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="simulasi.html" class="active">Simulasi</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="kuis.html">Kuis</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+                <li><a button id="logout-btn">Logout</a></li>
+                <script>
+                    document.getElementById('logout-btn').addEventListener('click', function() {
+                        localStorage.removeItem('isLoggedIn'); // Hapus status login
+                        window.location.href = 'login.html'; // Arahkan kembali ke halaman login
+                    });
+                </script>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Simulasi Algoritma Pengurutan</h1>
+            <p>Pilih algoritma, atur ukuran array, dan mulai simulasi untuk melihat bagaimana algoritma pengurutan bekerja secara visual.</p>
+        </section>
+
+        <div class="simulation-controls">
+            <select id="algorithm-select">
+                <option value="bubble">Bubble Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="insertion">Insertion Sort</option>
+            </select>
+
+            <div class="speed-control">
+                <label for="speed-slider">Kecepatan:</label>
+                <div class="slider-container">
+                    <span class="speed-label">Lambat</span>
+                    <input type="range" id="speed-slider" min="1" max="200" value="100">
+                    <span class="speed-label">Cepat</span>
+                </div>
+                <span id="speed-value">100 ms</span>
+            </div>
+            
+            <input type="number" id="array-size" min="5" max="100" value="10">
+            
+            <button id="generate-array">Generate Array</button>
+            <button id="start-simulation">Mulai Simulasi</button>
+            <button id="pause-simulation">Pause</button>
+            <button id="reset-simulation">Reset</button>
+        </div>
+
+        <div class="simulation-area">
+            <canvas id="sorting-canvas" class="center-canvas"></canvas>
+        </div>
+
+        <div class="simulation-info">
+            <h2>Informasi Algoritma</h2>
+            <p id="algorithm-description"></p>
+            <p id="algorithm-complexity"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>2024 Virtual Lab: Sorting Algorithm.</p>
+    </footer>
+
+    <script src="source/script.js"></script>
+    <script src="source/hamburger.js"></script>
+    <script src="source/transition.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html'; // Arahkan ke halaman login jika belum login
+            }
+        });
+    </script>
+
+</body>
+</html>
