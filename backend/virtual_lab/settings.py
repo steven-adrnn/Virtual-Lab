@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-$_9e(+j4(hfu$fmyfz+p5cv2o2ql4j+053_gp5d^tlecjx(j@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -88,7 +88,10 @@ WSGI_APPLICATION = 'virtual_lab.wsgi.application'
 
 DATABASE_URL = os.getenv('DATABASE_URL', default='sqlite:///db.sqlite3')
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
