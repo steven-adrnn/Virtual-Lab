@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
+import environ
+
 
 load_dotenv()
 
@@ -28,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$_9e(+j4(hfu$fmyfz+p5cv2o2ql4j+053_gp5d^tlecjx(j@)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +48,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework_simplejwt',
+    'dbbackup',
+    # 'django_dbbackup', 
 
 ]
 
@@ -80,18 +84,22 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'virtual_lab.wsgi.application'
+WSGI_APPLICATION = 'virtual_lab.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+DBBACKUP_STORAGE = 'django_dbbackup.storage.filesystem_storage'
+DBBACKUP_STORAGE_OPTIONS = {
+    'location': 'backups/',  # Direktori tempat backup disimpan
+}
+DBBACKUP_FILESYSTEM_DIRECTORY = 'backups'
+# DATABASE_URL = os.getenv('DATABASE_URL', default='sqlite:///db.sqlite3')
+env = environ.Env()
+environ.Env.read_env()
 
-DATABASE_URL = os.getenv('DATABASE_URL', default='sqlite:///db.sqlite3')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db()
 }
 
 
@@ -140,10 +148,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",  # Ganti dengan URL frontend Anda
-#     "https://virtual-lab-sorting-algorithm.vercel.app"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'https://frontend-indol-psi-15.vercel.app',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

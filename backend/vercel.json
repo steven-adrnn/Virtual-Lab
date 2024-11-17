@@ -1,23 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "virtual_lab/wsgi.py",
-            "use": "@vercel/python",
-            "config": { 
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "virtual_lab/wsgi.py"
-        }
-    ],
-    "env": {
-        "DJANGO_SETTINGS_MODULE": "virtual_lab.settings",
-        "DEBUG": "0"
+  "version": 2,
+  "builds": [
+    {
+      "src": "virtual_lab/wsgi.py",
+      "use": "@vercel/python"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "virtual_lab/wsgi.py"
+    }
+  ]
 }

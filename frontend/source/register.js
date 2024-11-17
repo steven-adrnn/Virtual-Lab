@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         // Kirim data pendaftaran ke backend
-        fetch('http://localhost:8000/api/users/', {
+        fetch('https://backend-mu-ivory.vercel.app/api/users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

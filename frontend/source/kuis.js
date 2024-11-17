@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadQuestions() {
-    fetch('http://localhost:8000/api/quizzes/')
+    fetch('https://backend-mu-ivory.vercel.app/api/quizzes/')
         .then(response => response.json())
         .then(questions => {
             window.questions = questions; // Simpan pertanyaan ke variabel global

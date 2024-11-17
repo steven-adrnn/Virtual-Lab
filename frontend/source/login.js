@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         // Kirim data login ke backend
-        fetch('http://localhost:8000/api/token/', {
+        fetch('https://backend-mu-ivory.vercel.app/api/token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
