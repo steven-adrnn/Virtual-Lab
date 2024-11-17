@@ -34,7 +34,7 @@ function loadQuestions() {
             // Proses pertanyaan dan tampilkan di UI
             // console.log(questions);
             // Ambil progres kuis pengguna
-            fetch('http://localhost:8000/api/quiz-progress/', {
+            fetch('https://backend-mu-ivory.vercel.app/api/quiz-progress/', {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('access') // Gunakan token akses
                 }
@@ -201,7 +201,7 @@ function isAccessTokenValid() {
     }
 
     // Coba kirim permintaan ke endpoint yang memerlukan autentikasi
-    return fetch('http://localhost:8000/api/quiz-progress/', {
+    return fetch('https://backend-mu-ivory.vercel.app/api/quiz-progress/', {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + accessToken
@@ -221,7 +221,7 @@ function refreshAccessToken() {
         return Promise.reject('No refresh token found');
     }
 
-    return fetch('http://localhost:8000/api/token/refresh/', {
+    return fetch('https://backend-mu-ivory.vercel.app/api/token/refresh/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -260,7 +260,7 @@ function saveQuizProgress(currentQuestionIndex, score) {
 
 function sendQuizProgress(currentQuestionIndex, score) {
     const accessToken = localStorage.getItem('access');
-    fetch('http://localhost:8000/api/quiz-progress/', {
+    fetch('https://backend-mu-ivory.vercel.app/api/quiz-progress/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
